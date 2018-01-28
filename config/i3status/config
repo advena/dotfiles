@@ -20,7 +20,8 @@ order += "disk /"
 order += "disk /home"
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery 1"
+#order += "battery 1"
+order += "volume master"
 order += "tztime local"
 # order += "ipv6"
 # order += "run_watch DHCP"
@@ -76,6 +77,13 @@ format_down = " no lan "
 tztime local {
 format = "   %Y-%m-%d   %H:%M:%S "
 #format = " %m.%d.%H:%M "
+}
+volume master {
+    format = " %volume"
+    format_muted = " %volume"
+    device = "default"
+    mixer = "PCM"
+    mixer_idx = 0
 }
 
 # run_watch DHCP {
